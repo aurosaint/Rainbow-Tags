@@ -1,57 +1,105 @@
-﻿namespace RainbowTags
+using System;
+using System.Collections.Generic;
+using Exiled.API.Features;
+using MEC;
+using UnityEngine;
+using Object = UnityEngine.Object;
+
+namespace RainbowTags.Components
 {
-    using MEC;
-    using PluginAPI.Core;
-    using System.Collections.Generic;
-    using UnityEngine;
+	public sealed class RainbowTagController : MonoBehaviour
+	{
+		public string[] Colors
+		{
+			get
+			{
+				return this.colors;
+			}
+			set
+			{
+				this.colors = (value ?? Array.Empty<string>());
+				this.position = 0;
+			}
+		}
 
-    public class RainbowTagController : MonoBehaviour
-    {
-        public Player Player;
-        public string[] Colors;
-        public string CurColor;
-        public CoroutineHandle RaindowCoroutine;
+		public float Interval
+		{
+			get
+			{
+				return this.interval;
+			}
+			set
+			{
+				this.interval = value;
+				this.intervalInFrames = value * 50f;
+			}
+		}
+		
+		private void Awake()
+		{
+			this.player = Player.Get(base.gameObject);
+		}
+		
+		private void Start()
+		{
+			this.coroutineHandle = Timing.RunCoroutine(MECExtensionMethods2.CancelWith<RainbowTagController>(MECExtensionMethods2.CancelWith(this.UpdateColor(), this.player.GameObject), this));
+		}
+		
+		private void OnDestroy()
+		{
+			Timing.KillCoroutines(new CoroutineHandle[]
+			{
+				this.coroutineHandle
+			});
+		}
+		
+		private string RollNext()
+		{
+			int num = this.position + 1;
+			this.position = num;
+			if (num >= this.colors.Length)
+			{
+				this.position = 0;
+			}
+			if (this.colors.Length == 0)
+			{
+				return string.Empty;
+			}
+			return this.colors[this.position];
+		}
 
-        private int _curColorCount;
+		private IEnumerator<float> UpdateColor()
+		{
+			for (;;)
+			{
+				int z = 0;
+				while ((float)z < this.intervalInFrames)
+				{
+					yield return 0f;
+					int num = z;
+					z = num + 1;
+				}
+				string text = this.RollNext();
+				if (string.IsNullOrEmpty(text))
+				{
+					break;
+				}
+				this.player.RankColor = text;
+			}
+			Object.Destroy(this);
+			yield break;
+		}
+		
+		private Player player;
+		
+		private int position;
+		
+		private float interval;
 
-        public void Awake()
-        {
-            Player = Player.Get(gameObject);
-        }
+		private float intervalInFrames;
 
-        public void Start()
-        {
-            RaindowCoroutine = Timing.RunCoroutine(RainbowTag());
-        }
+		private string[] colors;
 
-        public void OnDestroy()
-        {
-            Timing.KillCoroutines(RaindowCoroutine);
-        }
-
-        private void UpdateColor()
-        {
-            if (Colors.Length <= 0)
-            {
-                CurColor = string.Empty;
-                return;
-            }
-
-            if (++_curColorCount >= Colors.Length) _curColorCount = 0;
-
-            CurColor = Colors[_curColorCount];
-        }
-
-        private IEnumerator<float> RainbowTag()
-        {
-            while (true)
-            {
-                UpdateColor();
-
-                Player.ReferenceHub.serverRoles.SetColor(CurColor);
-
-                yield return Timing.WaitForSeconds(Plugin.Instance.Config.UpdatedTime);
-            }
-        }
-    }
+		private CoroutineHandle coroutineHandle;
+	}
 }
