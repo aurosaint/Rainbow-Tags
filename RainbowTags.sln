@@ -1,9 +1,6 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.4.33103.184
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainbowTags", "RainbowTags\RainbowTags.csproj", "{F6F5D2DE-08AD-41E6-9583-5B3A9622BC5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainbowTags", "RainbowTags\RainbowTags.csproj", "{DCFE52B5-67D3-4FD7-B5F0-8A790F4DCD01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F6F5D2DE-08AD-41E6-9583-5B3A9622BC5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F6F5D2DE-08AD-41E6-9583-5B3A9622BC5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F6F5D2DE-08AD-41E6-9583-5B3A9622BC5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F6F5D2DE-08AD-41E6-9583-5B3A9622BC5E}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7A41A696-0590-41DB-8E21-5CE2DC62DBD6}
+		{DCFE52B5-67D3-4FD7-B5F0-8A790F4DCD01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCFE52B5-67D3-4FD7-B5F0-8A790F4DCD01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCFE52B5-67D3-4FD7-B5F0-8A790F4DCD01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCFE52B5-67D3-4FD7-B5F0-8A790F4DCD01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
