@@ -33,7 +33,8 @@ sequences:
 RankName:
   - Color
 ```
-## Colors (maybe some color doesn't work)
+## Colors
+```(maybe some color doesn't work)```
 Name | Color
 :--------:|:------:
 pink | ![#FF96DE](https://placehold.co/60x25/FF96DE/FF96DE.png)
