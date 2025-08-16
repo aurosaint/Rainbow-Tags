@@ -21,7 +21,7 @@ debug: false
 # The time, in seconds, between switching to the next color in a sequence.
 tag_nterval: 0.5
 sequences:
-  [RoleName]:
+  RankName:
   - 'red'
   - 'orange'
   - 'yellow'
