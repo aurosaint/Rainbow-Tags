@@ -1,25 +1,32 @@
-﻿namespace RainbowTags
+using System;
+using Exiled.API.Features;
+using Exiled.Events.Handlers;
+using Player = Exiled.Events.Handlers.Player;
+
+namespace RainbowTags
 {
-    using PluginAPI.Core;
-    using PluginAPI.Core.Attributes;
-    using PluginAPI.Events;
-
-    public class Plugin
+    public class Plugin : Plugin<Config>
     {
-        public static Plugin Instance { get; private set; }
+        public override string Name => "RainbowTags";
+        public override string Author => "AuroSaint";
+        public override Version Version => new Version(1, 0, 0);
+        public override Version RequiredExiledVersion => new Version(9, 0, 0);
 
-        [PluginConfig("config/rainbow-tags.yml")]
-        public Config Config;
+        private EventHandlers eventHandlers;
 
-        [PluginEntryPoint("Rainbow Tags", "1.0.0", "A plugin that will add a rainbow tag.", "MrAfitol")]
-        public void LoadPlugin()
+        public override void OnEnabled()
         {
-            Instance = this;
+            Log.Info("Official github link: https://github.com/MrAfitol/Rainbow-Tags (Plugin made by MrAfitol.) \n Forked github link: https://github.com/aurosaint/Rainbow-Tags (This plugin updated by aurosaint.)");
+            eventHandlers = new EventHandlers(this);
+            Player.ChangingGroup += eventHandlers.OnChangingGroup;
+            base.OnEnabled();
+        }
 
-            EventManager.RegisterEvents<EventHandlers>(this);
-
-            var handler = PluginHandler.Get(this);
-            handler.SaveConfig(this, nameof(Config));
+        public override void OnDisabled()
+        {
+            Player.ChangingGroup -= eventHandlers.OnChangingGroup;
+            eventHandlers = null;
+            base.OnDisabled();
         }
     }
 }
