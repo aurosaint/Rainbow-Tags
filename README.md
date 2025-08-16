@@ -2,6 +2,8 @@
 [![GitHub release](https://flat.badgen.net/github/release/MrAfitol/Rainbow-Tags)](https://github.com/MrAfitol/Rainbow-Tags/releases/)
 ![GitHub downloads](https://flat.badgen.net/github/assets-dl/MrAfitol/Rainbow-Tags)
 
+
+Plugin made by MrAfitol, updated by AuroSaint.
 A plugin that add a rainbow tag.
 ## How download ?
    - *1. Find the SCP SL server config folder*
