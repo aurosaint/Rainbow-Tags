@@ -1,37 +1,43 @@
-﻿namespace RainbowTags
-{
-    using System.Collections.Generic;
-    using System.ComponentModel;
+using System.Collections.Generic;
+using System.ComponentModel;
+using Exiled.API.Features;
+using Exiled.API.Interfaces;
 
-    public class Config
+namespace RainbowTags
+{
+    public sealed class Config : IConfig
     {
-        [Description("Tag and tag colors")]
-        public Dictionary<string, string[]> AllowRanks { get; set; } = new Dictionary<string, string[]>()
+        [Description("Determines whether the plugin is enabled or not.")]
+        public bool IsEnabled { get; set; } = true;
+
+        [Description("Enable debug logging for this plugin.")]
+        public bool Debug { get; set; } = false;
+
+        [Description("The time, in seconds, between switching to the next color in a sequence.")]
+        public float TagInterval
         {
-            { "owner", new string[]
+            get => tagInterval;
+            set
+            {
+                if (value < 0.5f)
                 {
-                    "pink",
-                    "aqua",
-                    "cyan",
-                    "blue_green",
-                    "mint",
-                    "emerald",
-                    "light_green",
-                    "green",
-                    "army_green",
-                    "carmine",
-                    "brown",
-                    "red",
-                    "crimson",
-                    "tomato",
-                    "orange",
-                    "lime",
-                    "yellow"
+                    Log.Warn("The TagInterval config cannot be set below 0.5 and has been automatically clamped.");
+                    tagInterval = 0.5f;
+                }
+                else
+                {
+                    tagInterval = value;
                 }
             }
+        }
+
+        public Dictionary<string, string[]> Sequences { get; set; } = new Dictionary<string, string[]>
+        {
+            { "owner", new[] { "red", "orange", "yellow", "green", "blue_green", "magenta" } },
+            { "admin", new[] { "green", "silver", "crimson" } }
         };
 
-        [Description("Color update time? (Do not recommend setting the value to less than 0.5, it may cause server lags)")]
-        public float UpdatedTime { get; set; } = 0.5f;
+        private float tagInterval = 0.5f;
+
     }
 }
