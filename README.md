@@ -1,6 +1,6 @@
 # Rainbow Tags
-[![GitHub release](https://flat.badgen.net/github/release/AuroSaint/Rainbow-Tags)](https://github.com/AuroSaint/Rainbow-Tags/releases/)
-![GitHub downloads](https://flat.badgen.net/github/assets-dl/AuroSaint/Rainbow-Tags)
+[![GitHub release](https://flat.badgen.net/github/release/aurosaint/Rainbow-Tags)](https://github.com/aurosaint/Rainbow-Tags/releases/)
+![GitHub downloads](https://flat.badgen.net/github/assets-dl/aurosaint/Rainbow-Tags)
 
 
 Plugin made by MrAfitol, updated by AuroSaint.
