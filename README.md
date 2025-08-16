@@ -21,21 +21,7 @@ debug: false
 # The time, in seconds, between switching to the next color in a sequence.
 tag_nterval: 0.5
 sequences:
-  aurosaint:
-  - 'red'
-  - 'orange'
-  - 'yellow'
-  - 'green'
-  - 'blue_green'
-  - 'magenta'
-  thecroshel:
-  - 'red'
-  - 'orange'
-  - 'yellow'
-  - 'green'
-  - 'blue_green'
-  - 'magenta'
-  falsevor:
+  [RoleName]:
   - 'red'
   - 'orange'
   - 'yellow'
