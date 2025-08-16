@@ -1,5 +1,5 @@
 # Rainbow Tags
-[![Release](https://img.shields.io/github/v/release/aurosaint/Rainbow-Tags)](https://github.com/aurosaint/Rainbow-Tags/releases/lastest)
+[![Release](https://img.shields.io/github/v/release/aurosaint/Rainbow-Tags)](https://github.com/aurosaint/Rainbow-Tags/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/aurosaint/Rainbow-Tags/total)](https://github.com/aurosaint/Rainbow-Tags/releases)
 [![License](https://img.shields.io/github/license/aurosaint/Rainbow-Tags)](https://github.com/aurosaint/Rainbow-Tags/blob/main/LICENSE)
 
