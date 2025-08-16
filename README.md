@@ -8,15 +8,9 @@ A plugin that add a rainbow tag.
 ## How download ?
    - *1. Find the SCP SL server config folder*
    
-   *("C:\Users\(user name)\AppData\Roaming\SCP Secret Laboratory\" for windows, "/home/(user name)/.config/SCP Secret Laboratory/" for linux)*
+   *("C:\Users\(user name)\AppData\Roaming\Exiled/" for windows, "/home/(user name)/.config/Exiled/" for linux)*
   
-   - *2. Find the "PluginAPI" folder there, it contains the "plugins" folder.*
-  
-   - *3. Select either the port of your server to install the same on that server or the "global" folder to install the plugin for all servers*
-  
-  ***Or***
-  
-   - *Run the command in console `p install MrAfitol/Rainbow-Tags`*
+   - *2. Find the "Exiled" folder there should be a plugins folder, put it in the rainbowtags.dll.
   
  ## Config
 ```yml
