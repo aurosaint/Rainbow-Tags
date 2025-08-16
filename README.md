@@ -14,28 +14,34 @@ A plugin that add a rainbow tag.
   
  ## Config
 ```yml
-# Tag and tag colors
-allow_ranks:
-  owner:
-  - pink
-  - aqua
-  - cyan
-  - blue_green
-  - mint
-  - emerald
-  - light_green
-  - green
-  - army_green
-  - carmine
-  - brown
-  - red
-  - crimson
-  - tomato
-  - orange
-  - lime
-  - yellow
-# Color update time? (Do not recommend setting the value to less than 0.5, it may cause server lags)
-updated_time: 0.5
+# Determines whether the plugin is enabled or not.
+s_enabled: true
+# Enable debug logging for this plugin.
+debug: false
+# The time, in seconds, between switching to the next color in a sequence.
+tag_nterval: 0.5
+sequences:
+  aurosaint:
+  - 'red'
+  - 'orange'
+  - 'yellow'
+  - 'green'
+  - 'blue_green'
+  - 'magenta'
+  thecroshel:
+  - 'red'
+  - 'orange'
+  - 'yellow'
+  - 'green'
+  - 'blue_green'
+  - 'magenta'
+  falsevor:
+  - 'red'
+  - 'orange'
+  - 'yellow'
+  - 'green'
+  - 'blue_green'
+  - 'magenta'
 ```
 ```
 RankName:
