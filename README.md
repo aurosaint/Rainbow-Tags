@@ -6,7 +6,7 @@
 Plugin made by MrAfitol, updated by AuroSaint.
 A plugin that add a rainbow tag.
 ## How download ?
-   - *1. Find the SCP SL server config folder*
+   - *1. Find the exiled plugins folder in roaming*
    
    *("C:\Users\(user name)\AppData\Roaming\Exiled/" for windows, "/home/(user name)/.config/Exiled/" for linux)*
   
