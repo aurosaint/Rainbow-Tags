@@ -1,6 +1,7 @@
 # Rainbow Tags
 [![GitHub release](https://flat.badgen.net/github/release/aurosaint/Rainbow-Tags)](https://github.com/aurosaint/Rainbow-Tags/releases/)
 [![Downloads](https://img.shields.io/github/downloads/aurosaint/Rainbow-Tags/total)](https://github.com/aurosaint/Rainbow-Tags/releases)
+
 [![License](https://img.shields.io/github/license/aurosaint/Rainbow-Tags)](https://github.com/aurosaint/Rainbow-Tags/blob/main/LICENSE)
 
 
